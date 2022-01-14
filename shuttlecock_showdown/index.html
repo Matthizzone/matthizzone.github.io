@@ -262,19 +262,31 @@
 									<p>This enemy has a jetpack, so he can shoot from above the net. He weilds a laser birdie gun.</p>
 								</section>
 								<section>
-									<h3>Risus</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<h3>Locker Room</h3>
+									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="stadium.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+									</model-viewer>
+									<p>The title screen setting. To begin the game, players can strike a birdie corresponding to the game mode they would like to play.</p>
 								</section>
 							</div>
 						</div>
 					</section>
 
 
-					<!-- Eight -->
+				<!-- Eight -->
 					<section class="wrapper style1 align-center" id="first">
 						<div class="inner">
 							<h2>C# Scripts</h2>
-							<p><strong>Birdie Trajectory</strong>: In this game, the birdie follow a slight variation of simple projectile motion. To account for the large amount of air resistance that a light-weight feather birdie experiences during its flight, its velocity is multiplied by 0.99 every frame (The Oculus runs at 72 FPS).</p>
+							<p>
+								<strong>Birdie Trajectory</strong>: In this game, the birdie follow a slight variation of simple projectile motion. To account for the large amount of air resistance that a light-weight feather birdie experiences during its flight, its velocity is multiplied by 0.99 every frame (The Oculus runs at 72 FPS).
+								</p><p>
+								<strong>Racket Ricochet</strong>: The badminton racket has a box collider around its head. When a birdie enters this collider, its velocity is set to the normal of the the racket strings multiplied by the speed of the tip of the racket.
+							</p>
+						</div>
+					</section>
+
+				<!-- Back Button -->
+					<section class="wrapper style1 align-center" id="first">
+							<a href="../index.html#first" class="button">Back to Main Page</a></li>
 						</div>
 					</section>
 
