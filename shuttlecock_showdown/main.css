@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(../assets//css/fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
 
 /*
@@ -28,6 +28,10 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+
+.YMEQtf {
+	transform: translate(10%, 0%);
+}
 
 body {
 	line-height: 1;
@@ -150,6 +154,15 @@ input, select, textarea {
 			}
 
 		}
+
+
+	#centered {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: #ffffff;
+	}
 
 	body {
 		background-color: #ccffcc;
