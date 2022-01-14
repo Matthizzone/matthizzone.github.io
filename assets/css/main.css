@@ -2589,6 +2589,7 @@ input, select, textarea {
 		.icon.style2:before {
 			border-radius: 2.75em;
 			display: inline-block;
+			position: relative;
 			height: 2.75em;
 			line-height: 2.75em;
 			width: 2.75em;
@@ -2889,6 +2890,11 @@ input, select, textarea {
 			ul.icons li:last-child {
 				padding-right: 0;
 			}
+
+	#github-logo {
+		position: relative;
+		align-content: center;
+	}
 
 /* Section/Article */
 
