@@ -17,14 +17,16 @@
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 
-				<img src="main_pic_blur.jpg">
-				<h1 id="centered">Shuttlecock Showdown</h1>
+				<div style="position: relative;">
+					<img src="main_pic_blur.jpg" style="width: 100vw;">
+					<h1 id="centered">Shuttlecock Showdown</h1>
+				</div>
 
 				<!-- One -->
 					<section class="wrapper style1 align-center" id="first">
 						<div class="inner">
 							<h2>What's this game about?</h2>
-							<p>Shuttlecock Showdown is a variation of a classic sports game: <strong>badminton</strong>... Except! On the other side of the court, there are enemies that are constantly shooting birdies at you. Instead of keeping up a rally, you use the racket to hit the raining birdies back to the enemies, which will take damage if you hit them. You also have a birdie gun for a stronger offense.</p>
+							<p>Shuttlecock Showdown is a variation of a classic sports game: <strong>badminton!</strong><br>... Except! On the other side of the court, there are enemies that are constantly shooting birdies at you. Instead of keeping up a rally, you use the racket to hit the raining birdies back to the enemies to damage them. The player is also equipped with an array of birdie guns for more open-ended gameplay.</p>
 						</div>
 					</section>
 
@@ -184,46 +186,50 @@
 				<!-- Six -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
-							<h2>My contributions</h2>
+							<h2>My Contributions</h2>
 							<p>There were many assets that went into the final export of the game, and below are the ones that I contributed.</p>
+
+							<p><strong>3D Models: </strong>All 3D models were made in Blender. Because the Oculus isn't very computationally powerful, I used as few verticies (low-poly) as possible to keep performance up.</p>
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
-									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_t-shirt.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
-									</model-viewer>
-									<h3>Birdie Launcher</h3>
-									<p>One of the weapons available in game. Launchers birdies with just enough power to reach the back court.</p>
-								</section>
-								<section>
-									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_grenade.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
-									</model-viewer>
-									<h3>Laser Gun</h3>
-									<p>Another weapon. It looks like a grenade launch but it actually shoots laser birdies that ignores gravity.</p>
-								</section>
-								<section>
-									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_trumpet.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
-									</model-viewer>
-									<h3>Dolor</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-wifi"></span>
-									<h3>Amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-								</section>
-								<section>
-									<span class="icon solid style2 major fa-cog"></span>
 									<h3>Magna</h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
-									<span class="icon style2 major fa-paper-plane"></span>
 									<h3>Tempus</h3>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
-									<span class="icon solid style2 major fa-desktop"></span>
-									<h3>Aliquam</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<h3>Stadium</h3>
+									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="stadium.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+									</model-viewer>
+									<p>The setting for the showdown.</p>
+								</section>
+								<section>
+									<h3>Birdie Launcher</h3>
+									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_t-shirt.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+									</model-viewer>
+									<p>One of the weapons available in game. Launchers birdies with just enough power to reach the back court.</p>
+								</section>
+								<section>
+									<h3>Laser Gun</h3>
+									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_grenade.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+									</model-viewer>
+									<p>Another weapon. It looks like a grenade launch but it actually shoots laser birdies that ignore gravity.</p>
+								</section>
+								<section>
+									<h3>Trumpet</h3>
+									<model-viewer style="float: left; position: relative; width: 100%; height: 20vh; margin-bottom: 3vh;" bounds="tight" src="gun_trumpet.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+									</model-viewer>
+									<p>This trumpet shoots... watermelons. That explode. Kind of like the grenade launcher, except that one shoots... lasers...</p>
+								</section>
+								<section>
+									<h3>Coach Voice</h3>
+									<audio controls>
+										<source src="Coach Voice Final.mp3" type="audio/mpeg">
+										Your browser does not support the audio element.
+									</audio>
+									<p>The tutorial for this game takes the form of a coach speaking directly to the player from beside the court. In the final game, the recording is pitched up 15%.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-sync-alt"></span>
