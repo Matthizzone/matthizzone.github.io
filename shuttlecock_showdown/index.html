@@ -188,12 +188,18 @@
 							<p>There were many assets that went into the final export of the game, and below are the ones that I contributed.</p>
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
-									<img src="main_pic.jpg" style="width: 10rem;">
+									<img src="gun.png" style="width: 10rem;">
 									<h3>Birdie Launcher</h3>
 									<p>One of the weapons available in game</p>
 								</section>
 								<section>
-									<model-viewer src="gun test.glb" auto-rotate camera-controls alt="cube" background-color="#455A64"></model-viewer>
+									<model-viewer bounds="tight" src="grenade.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls environment-image="neutral" poster="poster.webp" shadow-intensity="1">
+
+									</model-viewer>
+									
+									
+
+									</model-viewer>
 									
 									
 									<h3>Laser Gun</h3>
@@ -291,13 +297,14 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			
+			<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 	</body>
 </html>
