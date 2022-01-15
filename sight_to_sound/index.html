@@ -22,15 +22,16 @@
 					<br>
 					<h1>Sight to Sound</h1>
 					<h4>Sep 2016 - May 2017</h4>
-					<img src="main_pic.png">
+					<img src="main_pic_no_bg.png">
 				</div>
 
 				<!-- One -->
 					<section class="wrapper style1 align-center" id="first">
 						<div class="inner">
 							<h2>What's this?</h2>
-							<p>This device is a combination of glasses, a camera and earbuds (the camera is the small hole on the nose bridge). It takes live feed video footage, converts it into sound, and plays it into the earbuds.</p>
-							<h3>Convert images to sound?</h3>
+							<p>A combination of glasses, a camera and earbuds (the camera is the small hole on the nose bridge).<br>
+								It takes live feed video footage, converts it into sound, and plays it into the earbuds.</p>
+							<h2>Convert images to sound?</h2>
 							<p>This "sensory substitution" was the key focus of this project. The main approach is explained in the video below.</p>
 						</div>
 					</section>
@@ -39,15 +40,45 @@
 					<iframe style="width: 80vw; height: 80vh;" jsname="L5Fo6c" class="YMEQtf" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals" frameborder="0" aria-label="YouTube Video, ARVR Final Video Submission" src="https://www.youtube.com/embed/Zopv_igC5TQ" allowfullscreen=""></iframe>
 
 				<!-- Eight -->
-					<section class="wrapper style1 align-center" id="first">
+					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<p>
 								Originally developed in Java in Eclipse IDE.
 							</p>
 							<p>
-								This project was presented at the 2017 Long Island Math Fair, where a gold medal was awarded. An academic paper was also written on the subject, which can be read <a href="Minimization_of_Mean_Adjacent_Different_Values_for_2D_Matrices.pdf" target="_blank">here</a>.
+								This project was presented at the 2017 Long Island Math Fair, where a gold medal was awarded.<br>
+								An academic paper was also written on the project, which can be read <a href="Minimization_of_Mean_Adjacent_Different_Values_for_2D_Matrices.pdf" target="_blank">here</a>.
 							</p>
 						</div>
+					</section>
+
+					
+				<!-- Nine -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h2>
+								The Sight to Sound Game
+							</h2>
+							<p>
+								<strong>Objective</strong>: Move the yellow circle to the right side of the screen. However, you are not allowed to look. <br>
+								Louder sounds mean that the obstacles are closer. Sounds are localized between left and right ear.<br>
+								
+								<strong>Purpose</strong>: To test to see if people can actually use sound to map their surroundings. <br>
+							</p><p>
+								<strong>U</strong>: Turn sound on <strong>I</strong>: Turn sound off <strong>WASD</strong>: Move <strong>Ctrl+R</strong>: Refresh map
+							</p><p>
+								You must keep your eyes closed to play! <br>
+							</p>
+						</div>
+						<canvas></canvas>
+						
+						<div class="inner">
+							<p>
+								It turns out to be quite difficult! Most participations lost their sense of direction rather quickly. <br>
+								The conclusion from this test is that the process of coverting images to sound is much more involved <br> that a simple distance-volume relationship.
+							</p>
+						</div>
+
 						<div class="inner">
 							<a href="../#sight_to_sound" class="button">Back to Main Page</a>
 						</div>
@@ -97,6 +128,9 @@
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/pizzicato/0.6.4/Pizzicato.min.js" integrity="sha256-sRz+dR9unMweZQPOAmSJKY3dHXJ4YJtr5OQaH1IkJdc=" crossorigin="anonymous"></script>
+        	<script src="main.js"></script>
 			
 			<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 	</body>
