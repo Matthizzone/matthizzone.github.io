@@ -2,9 +2,6 @@ club model
 model of each hole, level design
 yellow guy with swing anim
 music
-UI
-club options
-multiplayer, 
 shot simulation
 realistic crowd responses
 designing each card
@@ -15,3 +12,7 @@ looping flag anim
 SFX: each card, UI, beach, ball bounce, club swing, zoom in etc. check folder. squishy noise,
 wind: causes trees to blow, louder depending on wind speed, ball speed.
 grass and rock textures
+
+UI 
+club options
+multiplayer,

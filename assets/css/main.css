@@ -2586,6 +2586,10 @@ input, select, textarea {
 			font-family: 'Font Awesome 5 Brands';
 		}
 
+		.icon.fas:before {
+			font-family: 'Font Awesome 5 Free';
+		}
+
 		.icon.style2:before {
 			border-radius: 2.75em;
 			display: inline-block;
