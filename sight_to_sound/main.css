@@ -138,6 +138,13 @@ input, select, textarea {
 		transition: opacity 0.2s;
 	}
 
+	@media only screen and (max-width: 768px) {
+	#shadow {
+		display: none;
+	}
+	}
+	
+
 /* Type */
 
 	html {
