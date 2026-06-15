@@ -33,6 +33,7 @@
 
 		body {
 			margin: 0;
+			padding-top: 76px;
 			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 			color: var(--ink);
 			background:
@@ -58,19 +59,22 @@
 		}
 
 		.site-nav {
-			position: sticky;
+			position: fixed;
 			top: 14px;
+			left: 50%;
+			width: min(calc(100% - 32px), var(--max-width));
 			z-index: 10;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			gap: 16px;
-			margin-top: 14px;
+			margin-top: 0;
 			padding: 10px 12px;
 			border: 1px solid rgba(255, 255, 255, 0.74);
 			border-radius: 999px;
 			background: rgba(255, 255, 255, 0.72);
 			box-shadow: 0 14px 36px rgba(25, 0, 134, 0.09);
+			transform: translateX(-50%);
 			backdrop-filter: blur(22px);
 		}
 
@@ -114,7 +118,12 @@
 			grid-template-columns: minmax(0, 1.06fr) minmax(280px, 0.72fr);
 			gap: 24px;
 			align-items: stretch;
-			padding: 54px 0 34px;
+			padding: 28px 0 34px;
+		}
+
+		.top-hub {
+			grid-template-columns: 1fr;
+			padding-top: 38px;
 		}
 
 		.hero-copy,
@@ -172,6 +181,45 @@
 			flex-wrap: wrap;
 			gap: 12px;
 			margin-top: 30px;
+		}
+
+		.hub-links {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 12px;
+			margin-top: 30px;
+		}
+
+		.hub-link {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			min-height: 74px;
+			padding: 16px;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-sm);
+			background: rgba(255, 255, 255, 0.72);
+			box-shadow: 0 12px 24px rgba(25, 0, 134, 0.06);
+			font-weight: 900;
+			transition: transform 180ms ease, background 180ms ease;
+		}
+
+		.hub-link:hover {
+			transform: translateY(-2px);
+			background: var(--paper);
+		}
+
+		.hub-link img {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;
+		}
+
+		.hub-link span {
+			display: block;
+			color: rgba(25, 0, 134, 0.58);
+			font-size: 0.82rem;
+			font-weight: 750;
 		}
 
 		.button {
@@ -246,6 +294,39 @@
 		.profile-content p {
 			margin: 0;
 			color: rgba(255, 255, 255, 0.8);
+		}
+
+		.about-panel {
+			display: grid;
+			grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.7fr);
+			gap: 22px;
+			align-items: stretch;
+		}
+
+		.about-copy {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: clamp(26px, 5vw, 52px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: var(--shadow);
+			backdrop-filter: blur(18px);
+		}
+
+		.about-copy h2 {
+			margin: 0 0 14px;
+			font-size: clamp(2.4rem, 5vw, 4.8rem);
+			line-height: 0.96;
+			letter-spacing: 0;
+		}
+
+		.about-copy p {
+			max-width: 680px;
+			margin: 0;
+			color: rgba(25, 0, 134, 0.68);
+			font-size: 1.08rem;
 		}
 
 		.quick-links {
@@ -423,6 +504,127 @@
 			color: var(--ink);
 		}
 
+		.games-hub {
+			display: grid;
+			gap: 22px;
+		}
+
+		.games-panel {
+			padding: clamp(16px, 3vw, 24px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: var(--shadow);
+			backdrop-filter: blur(18px);
+		}
+
+		.games-panel-head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			margin-bottom: 16px;
+		}
+
+		.games-panel-head h3 {
+			margin: 0;
+			font-size: clamp(1.45rem, 3vw, 2.2rem);
+			line-height: 1;
+			letter-spacing: 0;
+		}
+
+		.games-panel-head p {
+			margin: 6px 0 0;
+			color: rgba(25, 0, 134, 0.62);
+		}
+
+		.steam-grid,
+		.itch-grid {
+			display: grid;
+			gap: 14px;
+		}
+
+		.steam-grid {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+		}
+
+		.itch-grid {
+			grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+		}
+
+		.game-card {
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-md);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: 0 14px 28px rgba(25, 0, 134, 0.08);
+			transition: transform 180ms ease, box-shadow 180ms ease;
+		}
+
+		.game-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 20px 38px rgba(25, 0, 134, 0.13);
+		}
+
+		.game-card img {
+			width: 100%;
+			aspect-ratio: 315 / 250;
+			object-fit: cover;
+			background: rgba(25, 0, 134, 0.08);
+		}
+
+		.steam-card img {
+			aspect-ratio: 231 / 87;
+		}
+
+		.game-card-body {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			gap: 12px;
+			padding: 14px;
+		}
+
+		.game-card h4 {
+			margin: 0;
+			font-size: 1rem;
+			line-height: 1.15;
+			letter-spacing: 0;
+		}
+
+		.game-note {
+			margin: 0;
+			color: rgba(25, 0, 134, 0.62);
+			font-size: 0.88rem;
+		}
+
+		.game-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 6px;
+			margin-top: auto;
+		}
+
+		.game-tag {
+			display: inline-flex;
+			align-items: center;
+			min-height: 26px;
+			padding: 5px 8px;
+			border-radius: 999px;
+			background: rgba(49, 29, 192, 0.08);
+			color: rgba(25, 0, 134, 0.72);
+			font-size: 0.76rem;
+			font-weight: 850;
+		}
+
+		.game-tag.store {
+			background: rgba(109, 195, 217, 0.2);
+			color: var(--primary);
+		}
+
 		.music-player {
 			display: grid;
 			gap: 18px;
@@ -432,6 +634,56 @@
 			background: rgba(255, 255, 255, 0.76);
 			box-shadow: var(--shadow);
 			backdrop-filter: blur(18px);
+		}
+
+		.music-feature {
+			display: grid;
+			grid-template-columns: minmax(0, 0.72fr) minmax(320px, 0.88fr);
+			gap: clamp(18px, 3vw, 30px);
+			align-items: center;
+			padding: clamp(18px, 3vw, 28px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: var(--shadow);
+			backdrop-filter: blur(18px);
+		}
+
+		.music-copy h2 {
+			margin: 0 0 12px;
+			font-size: clamp(2.3rem, 5vw, 4.7rem);
+			line-height: 0.96;
+			letter-spacing: 0;
+		}
+
+		.music-copy .card-copy {
+			max-width: 620px;
+			color: rgba(25, 0, 134, 0.66);
+			font-size: 1.06rem;
+		}
+
+		.music-disclaimer {
+			margin: 0px 40px 12px;
+			color: rgba(25, 0, 134, 0.2);
+			font-size: 0.74rem;
+			font-weight: 650;
+			line-height: 1.35;
+		}
+
+		.album-disc-frame {
+			overflow: hidden;
+			padding: 10px;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-md);
+			background: rgba(255, 255, 255, 0.64);
+			box-shadow: 0 18px 38px rgba(25, 0, 134, 0.12);
+		}
+
+		.album-disc-frame img {
+			width: 100%;
+			height: auto;
+			border-radius: calc(var(--radius-md) - 8px);
+			object-fit: cover;
 		}
 
 		.album-grid {
@@ -613,11 +865,7 @@
 		}
 
 		.available-on {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: 16px;
-			padding-top: 2px;
+			margin-top: 22px;
 		}
 
 		.available-on p {
@@ -629,18 +877,22 @@
 		.platform-logos {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: flex-end;
-			gap: 10px;
+			justify-content: flex-start;
+			gap: 12px;
 		}
 
 		.logo-link {
-			display: inline-grid;
-			place-items: center;
-			width: 46px;
-			height: 46px;
+			display: inline-flex;
+			align-items: center;
+			gap: 11px;
+			min-height: 58px;
+			padding: 14px 18px;
 			border: 1px solid var(--line);
-			border-radius: 14px;
+			border-radius: var(--radius-sm);
 			background: rgba(255, 255, 255, 0.74);
+			color: var(--ink);
+			font-size: 1rem;
+			font-weight: 900;
 			box-shadow: 0 10px 22px rgba(25, 0, 134, 0.07);
 			transition: transform 180ms ease, background 180ms ease;
 		}
@@ -650,9 +902,39 @@
 			background: var(--paper);
 		}
 
+		.logo-link.spotify {
+			border-color: rgba(30, 215, 96, 0.28);
+			background: rgba(30, 215, 96, 0.14);
+			color: #117a37;
+		}
+
+		.logo-link.apple {
+			border-color: rgba(250, 36, 60, 0.24);
+			background: rgba(250, 36, 60, 0.1);
+			color: #9f1627;
+		}
+
+		.logo-link.bandcamp {
+			border-color: rgba(29, 160, 195, 0.28);
+			background: rgba(29, 160, 195, 0.13);
+			color: #0d6f88;
+		}
+
+		.logo-link.youtube-music {
+			border-color: rgba(255, 0, 0, 0.22);
+			background: rgba(255, 0, 0, 0.1);
+			color: #b00000;
+		}
+
+		.logo-link.amazon {
+			border-color: rgba(70, 195, 208, 0.3);
+			background: rgba(70, 195, 208, 0.13);
+			color: #15727c;
+		}
+
 		.logo-link img {
-			width: 24px;
-			height: 24px;
+			width: 30px;
+			height: 30px;
 			object-fit: contain;
 		}
 
@@ -727,6 +1009,513 @@
 			font-weight: 900;
 			text-decoration: underline;
 			text-underline-offset: 4px;
+		}
+
+		.youtube-dashboard {
+			display: grid;
+			gap: 18px;
+			padding: clamp(18px, 3vw, 28px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: var(--shadow);
+			backdrop-filter: blur(18px);
+		}
+
+		.youtube-topline {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			gap: 18px;
+			align-items: center;
+		}
+
+		.youtube-topline h2 {
+			margin: 0 0 10px;
+			font-size: clamp(2.2rem, 5vw, 4.8rem);
+			line-height: 0.96;
+			letter-spacing: 0;
+		}
+
+		.youtube-topline p {
+			max-width: 640px;
+			margin: 0;
+			color: rgba(25, 0, 134, 0.66);
+			font-size: 1.05rem;
+		}
+
+		.youtube-mark {
+			display: grid;
+			place-items: center;
+			width: 86px;
+			height: 86px;
+			border-radius: 24px;
+			background: rgba(255, 0, 0, 0.1);
+		}
+
+		.youtube-mark img {
+			width: 48px;
+			height: 48px;
+		}
+
+		.stat-grid {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 12px;
+		}
+
+		.stat-card {
+			padding: 16px;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-sm);
+			background: rgba(255, 255, 255, 0.72);
+			box-shadow: 0 12px 24px rgba(25, 0, 134, 0.06);
+		}
+
+		.stat-card strong {
+			display: block;
+			margin-bottom: 4px;
+			font-size: clamp(1.55rem, 3vw, 2.35rem);
+			line-height: 1;
+			letter-spacing: 0;
+		}
+
+		.stat-card span {
+			color: rgba(25, 0, 134, 0.62);
+			font-size: 0.86rem;
+			font-weight: 800;
+		}
+
+		.chart-grid {
+			display: grid;
+			grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+			gap: 14px;
+		}
+
+		.chart-card {
+			padding: 18px;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-md);
+			background: rgba(255, 255, 255, 0.72);
+		}
+
+		.chart-card h3 {
+			margin: 0 0 12px;
+			font-size: 1.16rem;
+			letter-spacing: 0;
+		}
+
+		.youtube-page-preview {
+			overflow: hidden;
+			display: block;
+			border-radius: var(--radius-md);
+			background:
+				linear-gradient(145deg, rgba(255, 255, 255, 0.86), rgba(246, 244, 255, 0.9)),
+				var(--paper);
+			box-shadow: 0 14px 28px rgba(25, 0, 134, 0.08);
+		}
+
+		.youtube-page-banner {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			min-height: 126px;
+			padding: 20px;
+			background:
+				linear-gradient(135deg, rgba(255, 0, 0, 0.12), rgba(109, 195, 217, 0.24)),
+				var(--paper);
+		}
+
+		.youtube-page-avatar {
+			display: grid;
+			place-items: center;
+			width: 72px;
+			height: 72px;
+			border-radius: 22px;
+			background: var(--paper);
+			box-shadow: 0 14px 26px rgba(25, 0, 134, 0.1);
+		}
+
+		.youtube-page-avatar img {
+			width: 42px;
+			height: 42px;
+		}
+
+		.youtube-page-body {
+			padding: 18px;
+		}
+
+		.youtube-page-body h4 {
+			margin: 0 0 5px;
+			font-size: 1.42rem;
+			line-height: 1.05;
+			letter-spacing: 0;
+		}
+
+		.youtube-page-body p {
+			margin: 0;
+			color: rgba(25, 0, 134, 0.62);
+			font-weight: 750;
+		}
+
+		.youtube-page-metrics {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 8px;
+			margin: 16px 0;
+		}
+
+		.youtube-page-metric {
+			padding: 10px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			background: rgba(255, 255, 255, 0.7);
+		}
+
+		.youtube-page-metric strong,
+		.youtube-page-metric span {
+			display: block;
+		}
+
+		.youtube-page-metric strong {
+			font-size: 1.18rem;
+			line-height: 1;
+		}
+
+		.youtube-page-metric span {
+			margin-top: 4px;
+			color: rgba(25, 0, 134, 0.58);
+			font-size: 0.75rem;
+			font-weight: 800;
+		}
+
+		.youtube-feature {
+			display: grid;
+			grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
+			gap: 16px;
+			align-items: stretch;
+		}
+
+		.youtube-channel-card {
+			padding: 18px;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-md);
+			background:
+				linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(246, 244, 255, 0.9)),
+				var(--paper);
+		}
+
+		.youtube-card-head {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.youtube-channel-card h3 {
+			margin: 0 0 4px;
+			font-size: 1.55rem;
+			line-height: 1.05;
+			letter-spacing: 0;
+		}
+
+		.youtube-channel-card p {
+			margin: 0;
+			color: rgba(25, 0, 134, 0.64);
+			font-weight: 750;
+		}
+
+		.youtube-channel-card [data-youtube-description] {
+			margin-top: 12px;
+		}
+
+		.youtube-avatar {
+			display: grid;
+			place-items: center;
+			overflow: hidden;
+			flex: 0 0 auto;
+			width: 76px;
+			height: 76px;
+			border-radius: 22px;
+			background: rgba(255, 0, 0, 0.1);
+		}
+
+		.youtube-avatar img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.youtube-mini-stats {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 8px;
+			margin: 18px 0;
+		}
+
+		.youtube-mini-stat {
+			padding: 10px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			background: rgba(255, 255, 255, 0.72);
+		}
+
+		.youtube-mini-stat strong,
+		.youtube-mini-stat span {
+			display: block;
+		}
+
+		.youtube-mini-stat strong {
+			font-size: 1.14rem;
+			line-height: 1;
+		}
+
+		.youtube-mini-stat span {
+			margin-top: 4px;
+			color: rgba(25, 0, 134, 0.58);
+			font-size: 0.74rem;
+			font-weight: 850;
+		}
+
+		.youtube-video-card {
+			position: relative;
+			overflow: hidden;
+			display: block;
+			border: 1px solid var(--line);
+			border-radius: var(--radius-md);
+			background: #0f0f0f;
+			box-shadow: 0 14px 28px rgba(25, 0, 134, 0.08);
+		}
+
+		.youtube-video-card img {
+			width: 100%;
+			height: 100%;
+			min-height: 360px;
+			object-fit: cover;
+			transition: transform 180ms ease, filter 180ms ease;
+		}
+
+		.youtube-video-card::before {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			inset: 0;
+			background: linear-gradient(180deg, transparent 35%, rgba(15, 15, 15, 0.66));
+		}
+
+		.youtube-video-card:hover img {
+			filter: brightness(0.86);
+			transform: scale(1.02);
+		}
+
+		.youtube-video-title {
+			position: absolute;
+			z-index: 2;
+			right: 18px;
+			bottom: 18px;
+			left: 18px;
+			color: var(--paper);
+			font-size: clamp(1.15rem, 2vw, 1.65rem);
+			font-weight: 900;
+			line-height: 1.08;
+			text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
+		}
+
+		.line-chart {
+			width: 100%;
+			height: auto;
+		}
+
+		.line-chart .grid-line {
+			stroke: rgba(25, 0, 134, 0.1);
+			stroke-width: 1;
+		}
+
+		.line-chart .trend-fill {
+			fill: rgba(109, 195, 217, 0.18);
+		}
+
+		.line-chart .trend-line {
+			fill: none;
+			stroke: var(--primary);
+			stroke-linecap: round;
+			stroke-linejoin: round;
+			stroke-width: 5;
+		}
+
+		.line-chart .trend-dot {
+			fill: var(--paper);
+			stroke: var(--primary);
+			stroke-width: 4;
+		}
+
+		.chart-caption {
+			margin: 10px 0 0;
+			color: rgba(25, 0, 134, 0.58);
+			font-size: 0.84rem;
+			font-weight: 750;
+		}
+
+		.release-panel {
+			display: grid;
+			grid-template-columns: minmax(0, 0.76fr) minmax(360px, 1fr);
+			gap: 20px;
+			align-items: stretch;
+			padding: clamp(18px, 3vw, 28px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background:
+				linear-gradient(145deg, rgba(49, 29, 192, 0.92), rgba(25, 0, 134, 0.94)),
+				var(--ink);
+			box-shadow: var(--shadow);
+			color: var(--paper);
+			backdrop-filter: blur(18px);
+		}
+
+		.release-copy {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: clamp(12px, 2vw, 22px);
+		}
+
+		.release-copy .eyebrow,
+		.release-copy .card-copy {
+			color: rgba(255, 255, 255, 0.74);
+		}
+
+		.release-copy h2 {
+			margin: 0 0 12px;
+			font-size: clamp(2.4rem, 5vw, 4.9rem);
+			line-height: 0.95;
+			letter-spacing: 0;
+		}
+
+		.release-copy .card-copy {
+			max-width: 560px;
+			font-size: 1.06rem;
+		}
+
+		.release-widget {
+			overflow: hidden;
+			display: grid;
+			align-content: center;
+			min-height: 236px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			border-radius: var(--radius-md);
+			background: rgba(0, 0, 0, 0.22);
+			box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+		}
+
+		.release-widget iframe {
+			width: 100%;
+			height: 190px;
+			border: 0;
+		}
+
+		.support-panel {
+			display: grid;
+			grid-template-columns: minmax(0, 0.86fr) minmax(340px, 0.74fr);
+			gap: 22px;
+			align-items: stretch;
+			padding: clamp(18px, 3vw, 28px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background:
+				linear-gradient(145deg, rgba(220, 156, 62, 0.94), rgba(109, 195, 217, 0.86)),
+				var(--gold);
+			box-shadow: var(--shadow);
+			color: var(--ink);
+		}
+
+		.support-copy {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: clamp(12px, 2vw, 22px);
+		}
+
+		.support-copy h2 {
+			margin: 0 0 12px;
+			font-size: clamp(2.3rem, 5vw, 4.7rem);
+			line-height: 0.96;
+			letter-spacing: 0;
+		}
+
+		.support-copy .card-copy {
+			max-width: 620px;
+			color: rgba(25, 0, 134, 0.72);
+			font-size: 1.06rem;
+		}
+
+		.support-actions {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 10px;
+			margin-top: 22px;
+		}
+
+		.support-action {
+			padding: 14px;
+			border: 1px solid rgba(25, 0, 134, 0.12);
+			border-radius: var(--radius-sm);
+			background: rgba(255, 255, 255, 0.48);
+			box-shadow: 0 12px 24px rgba(25, 0, 134, 0.08);
+		}
+
+		.support-action img {
+			width: 25px;
+			height: 25px;
+			margin-bottom: 10px;
+			object-fit: contain;
+		}
+
+		.support-action strong,
+		.support-action span {
+			display: block;
+		}
+
+		.support-action strong {
+			margin-bottom: 3px;
+			font-size: 0.98rem;
+			line-height: 1.1;
+		}
+
+		.support-action span {
+			color: rgba(25, 0, 134, 0.62);
+			font-size: 0.82rem;
+			font-weight: 750;
+			line-height: 1.25;
+		}
+
+		.support-collage {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-auto-rows: minmax(110px, 1fr);
+			gap: 10px;
+			min-height: 390px;
+		}
+
+		.support-image {
+			overflow: hidden;
+			border: 1px solid rgba(255, 255, 255, 0.38);
+			border-radius: var(--radius-sm);
+			background: rgba(255, 255, 255, 0.35);
+			box-shadow: 0 14px 26px rgba(25, 0, 134, 0.1);
+		}
+
+		.support-image.large {
+			grid-column: span 2;
+			grid-row: span 2;
+		}
+
+		.support-image.tall {
+			grid-row: span 2;
+		}
+
+		.support-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		.card-actions {
@@ -805,7 +1594,8 @@
 			}
 
 			.hero,
-			.contact-panel {
+			.contact-panel,
+			.about-panel {
 				grid-template-columns: 1fr;
 			}
 
@@ -822,6 +1612,10 @@
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
+			.hub-links {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
 			.section-head {
 				align-items: flex-start;
 				flex-direction: column;
@@ -833,6 +1627,21 @@
 
 			.discord-panel {
 				grid-template-columns: 1fr;
+			}
+
+			.steam-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.youtube-topline,
+			.release-panel,
+			.support-panel,
+			.chart-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.stat-grid {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
 			.discord-copy {
@@ -847,13 +1656,18 @@
 		}
 
 		@media (max-width: 560px) {
+			body {
+				padding-top: 118px;
+			}
+
 			.page-shell {
 				width: min(100% - 20px, var(--max-width));
 			}
 
 			.site-nav {
-				position: static;
-				margin-top: 10px;
+				top: 10px;
+				width: min(100% - 20px, var(--max-width));
+				border-radius: 22px;
 			}
 
 			.nav-links a {
@@ -870,6 +1684,10 @@
 			}
 
 			.quick-links {
+				grid-template-columns: 1fr;
+			}
+
+			.hub-links {
 				grid-template-columns: 1fr;
 			}
 
@@ -909,6 +1727,16 @@
 				justify-content: flex-start;
 			}
 
+			.games-panel-head {
+				align-items: flex-start;
+				flex-direction: column;
+			}
+
+			.steam-grid,
+			.itch-grid {
+				grid-template-columns: 1fr;
+			}
+
 			.discord-panel {
 				padding: 12px;
 			}
@@ -916,6 +1744,37 @@
 			.discord-widget-frame,
 			.discord-widget-frame iframe {
 				min-height: 420px;
+			}
+
+			.stat-grid {
+				grid-template-columns: 1fr;
+			}
+
+			.youtube-mark {
+				width: 68px;
+				height: 68px;
+				border-radius: 18px;
+			}
+
+			.youtube-feature {
+				grid-template-columns: 1fr;
+			}
+
+			.youtube-video-card img {
+				min-height: 260px;
+			}
+
+			.release-widget {
+				min-height: 210px;
+			}
+
+			.support-actions {
+				grid-template-columns: 1fr;
+			}
+
+			.support-collage {
+				grid-auto-rows: 120px;
+				min-height: auto;
 			}
 		}
 	</style>
@@ -928,193 +1787,212 @@
 				<span>Matthizzone</span>
 			</a>
 			<div class="nav-links">
+				<a href="#upcoming">Upcoming</a>
 				<a href="#games">Games</a>
 				<a href="#discord">Discord</a>
+				<a href="#youtube">YouTube</a>
 				<a href="#music">Music</a>
 				<a href="#support">Support</a>
+				<a href="#about">About</a>
 				<a href="#contact">Contact</a>
 			</div>
 		</nav>
 
-		<header class="hero" id="top">
+		<header class="hero top-hub" id="top">
 			<section class="hero-copy" aria-labelledby="hero-title">
-				<span class="kicker">Game developer and musician</span>
-				<h1 id="hero-title">About</h1>
-				<p class="lede">A central place for my games, music, community links, and whatever strange little creative thing I release next.</p>
-				<div class="hero-actions">
-					<a class="button primary" href="#games">Play my games</a>
-					<a class="button secondary" href="#music">Listen now</a>
+				<span class="kicker">Quick link hub</span>
+				<h1 id="hero-title">Matthizzone in one place.</h1>
+				<p class="lede">This page is here to get you somewhere else fast: wishlist the next game, play the catalog, join Discord, watch devlogs, stream music, or send a message.</p>
+				<div class="hub-links" aria-label="Primary destinations">
+					<a class="hub-link" href="#upcoming">
+						<img src="https://cdn.simpleicons.org/steam/190086" alt="" />
+						<strong>Wishlist <span>Upcoming release</span></strong>
+					</a>
+					<a class="hub-link" href="#games">
+						<img src="https://cdn.simpleicons.org/itchdotio/FA5C5C" alt="" />
+						<strong>Play <span>Steam and itch.io</span></strong>
+					</a>
+					<a class="hub-link" href="#discord">
+						<img src="https://cdn.simpleicons.org/discord/5865F2" alt="" />
+						<strong>Join <span>Discord community</span></strong>
+					</a>
+					<a class="hub-link" href="#music">
+						<img src="https://cdn.simpleicons.org/spotify/1ED760" alt="" />
+						<strong>Listen <span>Music platforms</span></strong>
+					</a>
 				</div>
 			</section>
-
-			<aside class="profile-card" aria-label="Photo of Matt">
-				<div class="profile-content">
-					<h2>matthizzone.</h2>
-					<p>Game developer, musician and Youtuber.</p>
-				</div>
-			</aside>
 		</header>
 
-		<section class="quick-links" aria-label="Featured links">
-			<a class="pill-link" href="https://store.steampowered.com/app/3899880" target="_blank" rel="noopener">Upcoming Release <span>Wishlist on Steam</span></a>
-			<a class="pill-link" href="https://open.spotify.com/artist/65bxEZEspIilQqPiQXbTOq" target="_blank" rel="noopener">Spotify <span>Artist profile</span></a>
-			<a class="pill-link" href="https://matthizzone.itch.io/" target="_blank" rel="noopener">itch.io <span>Indie game catalog</span></a>
-			<a class="pill-link" href="https://discord.gg/MkEfBstFqv" target="_blank" rel="noopener">Discord <span>Join the community</span></a>
-		</section>
 	</div>
 
 	<main>
+		<section class="section" id="upcoming">
+			<div class="page-shell">
+				<div class="release-panel">
+					<div class="release-copy">
+						<p class="eyebrow">Upcoming release</p>
+						<h2>Super Money Ring</h2>
+						<p class="card-copy">The next Steam release from Matthizzone. Wishlist it, follow along, and keep an eye out for launch updates.</p>
+						<div class="card-actions">
+							<a class="button primary" href="https://store.steampowered.com/app/3899880/Super_Money_Ring/" target="_blank" rel="noopener">Wishlist on Steam</a>
+						</div>
+					</div>
+					<div class="release-widget">
+						<iframe src="https://store.steampowered.com/widget/3899880/" title="Super Money Ring Steam widget"></iframe>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="section" id="games">
 			<div class="page-shell">
 				<div class="section-head">
 					<div>
 						<p class="eyebrow">Games</p>
-						<h2>Play, wishlist, follow.</h2>
+						<h2>Play the Games.</h2>
 					</div>
-					<p>Steam releases, itch.io projects, and the newest release page are grouped here for quick sharing.</p>
+					<p>Steam releases and wishlist pages up top, with the broader itch.io library underneath for demos, browser builds, and experiments.</p>
 				</div>
 
-				<div class="carousel-wrap" data-carousel>
-					<div class="carousel" tabindex="0" aria-label="Game links carousel">
-						<article class="embed-card">
-							<iframe src="https://store.steampowered.com/widget/3899880/" height="190" title="Upcoming Steam release widget"></iframe>
-							<div class="embed-meta">
-								<div>
-									<p class="eyebrow">Steam</p>
-									<h3 class="card-title">Upcoming Release</h3>
-								</div>
-								<a class="mini-link" href="https://store.steampowered.com/app/3899880" target="_blank" rel="noopener">Open</a>
-							</div>
-						</article>
-
-						<article class="link-card accent">
+				<div class="games-hub">
+					<section class="games-panel" aria-labelledby="steam-games-title">
+						<div class="games-panel-head">
 							<div>
 								<p class="eyebrow">Steam</p>
-								<h3 class="card-title">All Steam releases</h3>
-								<p class="card-copy">Browse the full Steam developer page for released games, wishlists, and updates.</p>
+								<h3 id="steam-games-title">Store releases</h3>
+								<p>Wishlist, buy, and follow the main PC releases.</p>
 							</div>
-							<div class="card-actions">
-								<a class="mini-link" href="https://store.steampowered.com/search/?developer=matthizzone" target="_blank" rel="noopener">View on Steam</a>
-							</div>
-						</article>
+							<a class="mini-link" href="https://store.steampowered.com/search/?developer=matthizzone" target="_blank" rel="noopener">View all on Steam</a>
+						</div>
 
-						<article class="link-card gold">
-							<div>
-								<p class="eyebrow">itch.io</p>
-								<h3 class="card-title">Matthizzone on itch.io</h3>
-								<p class="card-copy">Play browser builds, downloads, jam games, and smaller experiments.</p>
-							</div>
-							<div class="card-actions">
-								<a class="mini-link" href="https://matthizzone.itch.io/" target="_blank" rel="noopener">Open itch.io</a>
-							</div>
-						</article>
-
-						<article class="link-card">
-							<div>
-								<p class="eyebrow">Community</p>
-								<h3 class="card-title">Discord</h3>
-								<p class="card-copy">Hang out, follow development notes, and catch whatever is being built next.</p>
-							</div>
-							<div class="card-actions">
-								<a class="mini-link" href="https://discord.gg/MkEfBstFqv" target="_blank" rel="noopener">Join Discord</a>
-							</div>
-						</article>
-					</div>
-					<div class="carousel-controls" aria-label="Game carousel controls">
-						<button class="icon-button" type="button" data-prev aria-label="Previous game link">&lt;</button>
-						<button class="icon-button" type="button" data-next aria-label="Next game link">&gt;</button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="section" id="music">
-			<div class="page-shell">
-				<div class="section-head">
-					<div>
-						<p class="eyebrow">Music</p>
-						<h2>Tap a cover to play.</h2>
-					</div>
-					<p>Eleven tracks, laid out like a little album-wall player. The larger covers highlight Super Money Ring, Birdminton, and Delineation.</p>
-				</div>
-
-				<div class="music-player">
-					<div class="album-grid" aria-label="Playable album cover grid">
-						<button class="album-tile featured money-ring" type="button" data-track="Super Money Ring" data-src="AlbumCovers/money_ring.mp3" aria-label="Play Super Money Ring">
-							<img src="AlbumCovers/money_ring_art.png" alt="Super Money Ring cover art" />
-							<span class="album-label"><strong>Super Money Ring</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Golf" data-src="AlbumCovers/golf.mp3" aria-label="Play Golf">
-							<img src="AlbumCovers/golf_art.png" alt="Golf cover art" />
-							<span class="album-label"><strong>Golf</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile featured birdminton" type="button" data-track="Birdminton" data-src="AlbumCovers/birdminton.mp3" aria-label="Play Birdminton">
-							<img src="AlbumCovers/birdminton.png" alt="Birdminton cover art" />
-							<span class="album-label"><strong>Birdminton</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Elom Husk" data-src="AlbumCovers/ElomHusk.mp3" aria-label="Play Elom Husk">
-							<img src="AlbumCovers/elom_art.png" alt="Elom Husk cover art" />
-							<span class="album-label"><strong>Elom Husk</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Runners High" data-src="AlbumCovers/RunnersHigh.mp3" aria-label="Play Runners High">
-							<img src="AlbumCovers/run_art.png" alt="Runners High cover art" />
-							<span class="album-label"><strong>Runners High</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile featured delineation" type="button" data-track="Delineation" data-src="AlbumCovers/Delineation.mp3" aria-label="Play Delineation">
-							<img src="AlbumCovers/delineation_album_cover.png" alt="Delineation cover art" />
-							<span class="album-label"><strong>Delineation</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Pogo Gogo" data-src="AlbumCovers/Pogo-Gogo.mp3" aria-label="Play Pogo Gogo">
-							<img src="AlbumCovers/Pogo_art.png" alt="Pogo Gogo cover art" />
-							<span class="album-label"><strong>Pogo Gogo</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Kong Fu" data-src="AlbumCovers/KongFu.mp3" aria-label="Play Kong Fu">
-							<img src="AlbumCovers/kong_fu_art.png" alt="Kong Fu cover art" />
-							<span class="album-label"><strong>Kong Fu</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Shortcut Racing" data-src="AlbumCovers/Shortcut_racing.mp3" aria-label="Play Shortcut Racing">
-							<img src="AlbumCovers/shortcut_racing.png" alt="Shortcut Racing cover art" />
-							<span class="album-label"><strong>Shortcut Racing</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Mini Golf Pool" data-src="AlbumCovers/MiniGolfPool.mp3" aria-label="Play Mini Golf Pool">
-							<img src="AlbumCovers/mini_golfpool_art.png" alt="Mini Golf Pool cover art" />
-							<span class="album-label"><strong>Mini Golf Pool</strong><span>Play</span></span>
-						</button>
-						<button class="album-tile" type="button" data-track="Chopping Block" data-src="AlbumCovers/chopping_block.mp3" aria-label="Play Chopping Block">
-							<img src="AlbumCovers/Chopping_art.png" alt="Chopping Block cover art" />
-							<span class="album-label"><strong>Chopping Block</strong><span>Play</span></span>
-						</button>
-					</div>
-
-					<div class="player-status" aria-live="polite">
-						<p>Now playing <strong data-current-track>Pick a cover</strong></p>
-						<audio data-audio-player controls preload="none"></audio>
-					</div>
-
-					<div class="available-on">
-						<p>available on:</p>
-						<div class="platform-logos" aria-label="Streaming service links">
-							<a class="logo-link" href="https://open.spotify.com/artist/65bxEZEspIilQqPiQXbTOq" target="_blank" rel="noopener" aria-label="Open Matthizzone on Spotify">
-								<img src="https://cdn.simpleicons.org/spotify/1ED760" alt="" />
+						<div class="steam-grid">
+							<a class="game-card steam-card" href="https://store.steampowered.com/app/3899880/Super_Money_Ring/" target="_blank" rel="noopener">
+								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3899880/77d33a5ba43bc22e088ccb8b8ca057bba7765ea5/capsule_231x87.jpg?t=1780680072" alt="Super Money Ring Steam capsule" />
+								<div class="game-card-body">
+									<h4>Super Money Ring</h4>
+									<div class="game-tags"><span class="game-tag store">Steam</span></div>
+								</div>
 							</a>
-							<a class="logo-link" href="https://music.apple.com/us/artist/matthizzone/6772750802" target="_blank" rel="noopener" aria-label="Open Matthizzone on Apple Music">
-								<img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" />
+							<a class="game-card steam-card" href="https://store.steampowered.com/app/2676450/Birdminton/" target="_blank" rel="noopener">
+								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2676450/capsule_231x87.jpg?t=1781454832" alt="Birdminton Steam capsule" />
+								<div class="game-card-body">
+									<h4>Birdminton</h4>
+									<div class="game-tags"><span class="game-tag store">Steam</span></div>
+								</div>
 							</a>
-							<a class="logo-link" href="https://matthizzone.bandcamp.com/" target="_blank" rel="noopener" aria-label="Open Matthizzone on Bandcamp">
-								<img src="https://cdn.simpleicons.org/bandcamp/1DA0C3" alt="" />
+							<a class="game-card steam-card" href="https://store.steampowered.com/app/2569060/Delineation/" target="_blank" rel="noopener">
+								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2569060/capsule_231x87.jpg?t=1781454797" alt="Delineation Steam capsule" />
+								<div class="game-card-body">
+									<h4>Delineation</h4>
+									<div class="game-tags"><span class="game-tag store">Steam</span></div>
+								</div>
 							</a>
-							<a class="logo-link" href="https://music.youtube.com/channel/UCwQfT5tgU9oruMmp945OzgQ" target="_blank" rel="noopener" aria-label="Open Matthizzone on YouTube Music">
-								<img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" />
+							<a class="game-card steam-card" href="https://store.steampowered.com/app/2820680/PogoGogo/" target="_blank" rel="noopener">
+								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2820680/capsule_231x87.jpg?t=1781454871" alt="Pogo-Gogo Steam capsule" />
+								<div class="game-card-body">
+									<h4>Pogo-Gogo</h4>
+									<div class="game-tags"><span class="game-tag store">Steam</span></div>
+								</div>
 							</a>
-							<a class="logo-link" href="https://music.amazon.com/artists/B0H362R3KM/matthizzone" target="_blank" rel="noopener" aria-label="Open Matthizzone on Amazon Music">
-								<img src="https://cdn.simpleicons.org/amazonmusic/46C3D0" alt="" />
+							<a class="game-card steam-card" href="https://store.steampowered.com/app/3497240/KONG_FU/" target="_blank" rel="noopener">
+								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3497240/62e1916165a2b69a239909efe640018b7c7c8a6e/capsule_231x87.jpg?t=1781454853" alt="KONG FU Steam capsule" />
+								<div class="game-card-body">
+									<h4>KONG FU</h4>
+									<div class="game-tags"><span class="game-tag store">Steam</span></div>
+								</div>
 							</a>
 						</div>
-					</div>
+					</section>
+
+					<section class="games-panel" aria-labelledby="itch-games-title">
+						<div class="games-panel-head">
+							<div>
+								<p class="eyebrow">itch.io</p>
+								<h3 id="itch-games-title">Demos, browser games, and experiments</h3>
+								<p>A wider library of smaller releases and playable prototypes.</p>
+							</div>
+							<a class="mini-link" href="https://matthizzone.itch.io/" target="_blank" rel="noopener">View all on itch.io</a>
+						</div>
+
+						<div class="itch-grid">
+							<a class="game-card" href="https://matthizzone.itch.io/matthizzones-escape-room" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE1MzU3Mzg2LnBuZw==/315x250%23c/IMUBzV.png" alt="Matthizzone's Escape Room cover art" />
+								<div class="game-card-body"><h4>Matthizzone's Escape Room</h4><div class="game-tags"><span class="game-tag">Puzzle</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/elom-husk" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzI3NjM0MDUxLnBuZw==/315x250%23c/27ss4m.png" alt="Elom Husk Boss Battle cover art" />
+								<div class="game-card-body"><h4>Elom Husk Boss Battle</h4><div class="game-tags"><span class="game-tag">Action</span><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/runners-high" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE4ODQwNTE3LnBuZw==/315x250%23c/jg%2Fcml.png" alt="Runner's High Demo cover art" />
+								<div class="game-card-body"><h4>Runner's High Demo</h4><div class="game-tags"><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/shortcut-racing" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE2NzY2MDY1LnBuZw==/315x250%23c/VnrbVZ.png" alt="Shortcut Racing cover art" />
+								<div class="game-card-body"><h4>Shortcut Racing</h4><div class="game-tags"><span class="game-tag">Racing</span><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/first-person-minesweeper" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzIwMjkwNDU3LnBuZw==/315x250%23c/wslaP4.png" alt="First-Person Minesweeper Horror cover art" />
+								<div class="game-card-body"><h4>First-Person Minesweeper Horror</h4><div class="game-tags"><span class="game-tag">Puzzle</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+						<!--
+							<a class="game-card" href="https://matthizzone.itch.io/no-e-pong" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzIxMjQ5MzA5LnBuZw==/315x250%23c/w5Vndw.png" alt="No E Pong cover art" />
+								<div class="game-card-body"><h4>No E Pong</h4><div class="game-tags"><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/swooper-money-ring" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzIwODA2NDk1LnBuZw==/315x250%23c/HEprIY.png" alt="Swooper Money Ring cover art" />
+								<div class="game-card-body"><h4>Swooper Money Ring</h4><div class="game-tags"><span class="game-tag">Platformer</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/kill-waldo" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzIwNDM1NTkzLnBuZw==/315x250%23c/brw6k%2B.png" alt="Kill Waldo cover art" />
+								<div class="game-card-body"><h4>Kill Waldo</h4><div class="game-tags"><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/minigolf-pool" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzIwMTQ2ODU3LnBuZw==/315x250%23c/%2F%2FCJAb.png" alt="Minigolf Pool cover art" />
+								<div class="game-card-body"><h4>Minigolf Pool!</h4><div class="game-tags"><span class="game-tag">Simulation</span><span class="game-tag">Browser</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/stella" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE3MDY4Mjg3LnBuZw==/315x250%23c/VLB%2FdH.png" alt="Stella cover art" />
+								<div class="game-card-body"><h4>Stella</h4><div class="game-tags"><span class="game-tag">Browser</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/matthizzones-crummy-chess" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE2MzM3NzE1LnBuZw==/315x250%23c/5FhvtU.png" alt="Matthizzone's Crummy Chess cover art" />
+								<div class="game-card-body"><h4>Matthizzone's Crummy Chess</h4><p class="game-note">Really crappy chess</p><div class="game-tags"><span class="game-tag">Simulation</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/3-cube-games" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE2MTA2NTEyLnBuZw==/315x250%23c/LEuiaP.png" alt="3 Cube Games cover art" />
+								<div class="game-card-body"><h4>3 Cube Games</h4><div class="game-tags"><span class="game-tag">Puzzle</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/chris-redman-is-aboard" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE1MTA0OTU4LnBuZw==/315x250%23c/LcG4PF.png" alt="Chris Redman is Aboard cover art" />
+								<div class="game-card-body"><h4>Chris Redman is Aboard</h4><div class="game-tags"><span class="game-tag">Action</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/pogo-gogo" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE0ODg4MzU4LnBuZw==/315x250%23c/p3CbK0.png" alt="Pogo-Gogo cover art" />
+								<div class="game-card-body"><h4>Pogo-Gogo</h4><div class="game-tags"><span class="game-tag">itch.io</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/chopping-block" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE0NTUyNDgxLnBuZw==/315x250%23c/FmTu%2F4.png" alt="Chopping Block cover art" />
+								<div class="game-card-body"><h4>Chopping Block</h4><p class="game-note">A game about making exact slices</p><div class="game-tags"><span class="game-tag">Simulation</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/birdminton-demo" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzE0MTc4NjA2LnBuZw==/315x250%23c/2sDuw9.png" alt="Birdminton Demo cover art" />
+								<div class="game-card-body"><h4>Birdminton Demo</h4><div class="game-tags"><span class="game-tag">Sports</span></div></div>
+							</a>
+							<a class="game-card" href="https://matthizzone.itch.io/delineation" target="_blank" rel="noopener">
+								<img src="https://img.itch.zone/aW1nLzEzMzAzOTcyLnBuZw==/315x250%23c/dBspkm.png" alt="Delineation cover art" />
+								<div class="game-card-body"><h4>Delineation</h4><div class="game-tags"><span class="game-tag">Puzzle</span><span class="game-tag">Windows</span></div></div>
+							</a>
+							
+						-->
+						</div>
+					</section>
 				</div>
 			</div>
 		</section>
+
 
 		<section class="section" id="discord">
 			<div class="page-shell">
@@ -1137,18 +2015,159 @@
 			</div>
 		</section>
 
+		<section class="section" id="youtube">
+			<div class="page-shell">
+				<div class="youtube-dashboard">
+					<div class="youtube-topline">
+						<div>
+							<p class="eyebrow">YouTube</p>
+							<h2>Watch Devlogs.</h2>
+						</div>
+						<a class="youtube-mark" href="https://www.youtube.com/@matthizzone" target="_blank" rel="noopener" aria-label="Open Matthizzone on YouTube">
+							<img src="https://cdn.simpleicons.org/youtube/FF0000" alt="" />
+						</a>
+					</div>
+
+					<div class="youtube-feature">
+						<article class="youtube-channel-card">
+							<div class="youtube-card-head">
+								<div class="youtube-avatar">
+									<img data-youtube-avatar src="https://unavatar.io/youtube/matthizzone" alt="Matthizzone YouTube channel picture" />
+								</div>
+								<div>
+									<p class="eyebrow">Channel page</p>
+									<h3 data-youtube-title>@matthizzone</h3>
+								</div>
+							</div>
+							<p data-youtube-description>One of the seemingly infinite gamedev YT channels.</p>
+							<div class="youtube-mini-stats" aria-label="YouTube channel stats">
+								<div class="youtube-mini-stat">
+									<strong data-youtube-subscribers>2.06K</strong>
+									<span>subscribers</span>
+								</div>
+								<div class="youtube-mini-stat">
+									<strong data-youtube-videos>55</strong>
+									<span>videos</span>
+								</div>
+								<div class="youtube-mini-stat">
+									<strong data-youtube-views>162.7K</strong>
+									<span>views</span>
+								</div>
+							</div>
+							<a class="mini-link" href="https://www.youtube.com/@matthizzone?sub_confirmation=1" target="_blank" rel="noopener">Subscribe to matthizzone</a>
+						</article>
+
+						<a class="youtube-video-card" href="https://www.youtube.com/watch?v=7XHqL_aSdso&amp;t=1s" target="_blank" rel="noopener" aria-label="Open featured Matthizzone YouTube video">
+							<img src="https://i.ytimg.com/vi/7XHqL_aSdso/maxresdefault.jpg" alt="Featured Matthizzone YouTube video thumbnail" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<section class="section" id="music">
+			<div class="page-shell">
+				<div class="music-feature">
+					<div class="music-copy">
+						<p class="eyebrow">Music</p>
+						<h2>Listen to Music.</h2>
+						<p class="card-copy">Soundtracks from the games.</p>
+						<div class="available-on">
+							<div class="platform-logos" aria-label="Streaming service links">
+								<a class="logo-link spotify" href="https://open.spotify.com/artist/65bxEZEspIilQqPiQXbTOq" target="_blank" rel="noopener" aria-label="Open Matthizzone on Spotify">
+									<img src="https://cdn.simpleicons.org/spotify/1ED760" alt="" />
+									<span>Spotify</span>
+								</a>
+								<a class="logo-link apple" href="https://music.apple.com/us/artist/matthizzone/6772750802" target="_blank" rel="noopener" aria-label="Open Matthizzone on Apple Music">
+									<img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" />
+									<span>Apple Music</span>
+								</a>
+								<a class="logo-link bandcamp" href="https://matthizzone.bandcamp.com/" target="_blank" rel="noopener" aria-label="Open Matthizzone on Bandcamp">
+									<img src="https://cdn.simpleicons.org/bandcamp/1DA0C3" alt="" />
+									<span>Bandcamp</span>
+								</a>
+								<a class="logo-link youtube-music" href="https://music.youtube.com/channel/UCwQfT5tgU9oruMmp945OzgQ" target="_blank" rel="noopener" aria-label="Open Matthizzone on YouTube Music">
+									<img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" />
+									<span>YouTube Music</span>
+								</a>
+								<a class="logo-link amazon" href="https://music.amazon.com/search/matthizzone" target="_blank" rel="noopener" aria-label="Search Matthizzone on Amazon Music">
+									<img src="https://cdn.simpleicons.org/amazonmusic/46C3D0" alt="" />
+									<span>Amazon Music</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="album-disc-frame">
+						<img src="AlbumDisc.png" alt="Concept image of a Matthizzone physical album and disc" />
+						<p class="music-disclaimer">The physical album shown here is a promotional visual concept. It does not currently exist as a manufactured album and is not currently for sale.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="section" id="support">
 			<div class="page-shell">
-				<article class="link-card gold">
-					<div>
+				<article class="support-panel">
+					<div class="support-copy">
 						<p class="eyebrow">Support</p>
-						<h2 class="card-title">Buy Me a Buttery Croissant</h2>
-						<p class="card-copy">A tiny tip jar for anyone who wants to support the games, music, and future oddities.</p>
+						<h2>Fuel the next little thing.</h2>
+						<p class="card-copy">Tips, wishlists, streams, and shares all help make the games, music, videos, and future experiments easier to keep building.</p>
+						<div class="support-actions" aria-label="Ways to support">
+							<a class="support-action" href="http://www.buymeacoffee.com/matthizzone" target="_blank" rel="noopener">
+								<img src="https://cdn.simpleicons.org/buymeacoffee/190086" alt="" />
+								<strong>Tip directly</strong>
+								<span>Small support, big morale boost.</span>
+							</a>
+							<a class="support-action" href="https://store.steampowered.com/app/3899880/Super_Money_Ring/" target="_blank" rel="noopener">
+								<img src="https://cdn.simpleicons.org/steam/190086" alt="" />
+								<strong>Wishlist</strong>
+								<span>Help the next Steam release travel farther.</span>
+							</a>
+							<a class="support-action" href="https://matthizzone.bandcamp.com/" target="_blank" rel="noopener">
+								<img src="https://cdn.simpleicons.org/bandcamp/190086" alt="" />
+								<strong>Buy music</strong>
+								<span>Support soundtracks and releases directly.</span>
+							</a>
+						</div>
 					</div>
-					<div class="card-actions">
-						<a class="mini-link" href="http://www.buymeacoffee.com/matthizzone" target="_blank" rel="noopener">Support Matt</a>
+					<div class="support-collage" aria-label="Matthizzone games and music artwork">
+						<div class="support-image large">
+							<img src="AlbumCovers/money_ring_art.png" alt="Super Money Ring artwork" />
+						</div>
+						<div class="support-image tall">
+							<img src="AlbumCovers/birdminton.png" alt="Birdminton artwork" />
+						</div>
+						<div class="support-image">
+							<img src="AlbumCovers/delineation_album_cover.png" alt="Delineation artwork" />
+						</div>
+						<div class="support-image">
+							<img src="Matthizzone_Logo.png" alt="Matthizzone logo" />
+						</div>
+						<div class="support-image">
+							<img src="AlbumCovers/Pogo_art.png" alt="Pogo-Gogo artwork" />
+						</div>
 					</div>
 				</article>
+			</div>
+		</section>
+
+		<section class="section" id="about">
+			<div class="page-shell">
+				<div class="about-panel">
+					<section class="about-copy" aria-labelledby="about-title">
+						<p class="eyebrow">About</p>
+						<h2 id="about-title">Who is that guy?</h2>
+						<p>Matthizzone is the creative home for my indie games, original soundtracks, YouTube devlogs, and community links. If you got here from a bio, a trailer, a song, or a game page, the buttons above are the fastest route to the thing you were looking for.</p>
+					</section>
+
+					<aside class="profile-card" aria-label="Photo of Matt">
+						<div class="profile-content">
+							<h2>matthizzone.</h2>
+							<p>Game developer, musician, and YouTuber.</p>
+						</div>
+					</aside>
+				</div>
 			</div>
 		</section>
 
@@ -1173,6 +2192,58 @@
 	</footer>
 
 	<script>
+		const YOUTUBE_API_KEY = "";
+		const YOUTUBE_CHANNEL_ID = "UC7Y9c-67pAcdw4Aa94WxRVA";
+
+		const compactNumber = (value) => {
+			const number = Number(value);
+			if (!Number.isFinite(number)) return value;
+			return Intl.NumberFormat("en", {
+				notation: "compact",
+				maximumFractionDigits: number >= 10000 ? 1 : 2
+			}).format(number);
+		};
+
+		const updateYouTubeChannelCard = async () => {
+			if (!YOUTUBE_API_KEY) return;
+
+			const endpoint = new URL("https://www.googleapis.com/youtube/v3/channels");
+			endpoint.searchParams.set("part", "snippet,statistics");
+			endpoint.searchParams.set("id", YOUTUBE_CHANNEL_ID);
+			endpoint.searchParams.set("key", YOUTUBE_API_KEY);
+
+			try {
+				const response = await fetch(endpoint);
+				if (!response.ok) throw new Error("YouTube API request failed");
+
+				const data = await response.json();
+				const channel = data.items && data.items[0];
+				if (!channel) return;
+
+				const snippet = channel.snippet || {};
+				const stats = channel.statistics || {};
+				const avatar = snippet.thumbnails && (snippet.thumbnails.high || snippet.thumbnails.medium || snippet.thumbnails.default);
+
+				const title = document.querySelector("[data-youtube-title]");
+				const description = document.querySelector("[data-youtube-description]");
+				const avatarImg = document.querySelector("[data-youtube-avatar]");
+				const subscribers = document.querySelector("[data-youtube-subscribers]");
+				const videos = document.querySelector("[data-youtube-videos]");
+				const views = document.querySelector("[data-youtube-views]");
+
+				if (title && snippet.customUrl) title.textContent = snippet.customUrl;
+				if (description && snippet.description) description.textContent = snippet.description;
+				if (avatarImg && avatar && avatar.url) avatarImg.src = avatar.url;
+				if (subscribers && stats.subscriberCount) subscribers.textContent = compactNumber(stats.subscriberCount);
+				if (videos && stats.videoCount) videos.textContent = compactNumber(stats.videoCount);
+				if (views && stats.viewCount) views.textContent = compactNumber(stats.viewCount);
+			} catch (error) {
+				console.warn("Could not load live YouTube channel data.", error);
+			}
+		};
+
+		updateYouTubeChannelCard();
+
 		document.querySelectorAll("[data-carousel]").forEach((wrap) => {
 			const scroller = wrap.querySelector(".carousel");
 			const prev = wrap.querySelector("[data-prev]");
@@ -1192,62 +2263,64 @@
 		const currentTrack = document.querySelector("[data-current-track]");
 		const albumTiles = document.querySelectorAll(".album-tile[data-src]");
 
-		const setTileState = (activeTile, isPlaying) => {
+		if (audioPlayer && currentTrack && albumTiles.length) {
+			const setTileState = (activeTile, isPlaying) => {
+				albumTiles.forEach((tile) => {
+					const label = tile.querySelector(".album-label span");
+					const isActive = tile === activeTile;
+					tile.classList.toggle("is-playing", isActive && isPlaying);
+					if (label) {
+						label.textContent = isActive && isPlaying ? "Pause" : "Play";
+					}
+				});
+			};
+
 			albumTiles.forEach((tile) => {
-				const label = tile.querySelector(".album-label span");
-				const isActive = tile === activeTile;
-				tile.classList.toggle("is-playing", isActive && isPlaying);
-				if (label) {
-					label.textContent = isActive && isPlaying ? "Pause" : "Play";
+				tile.addEventListener("click", async () => {
+					const src = tile.dataset.src;
+					const title = tile.dataset.track;
+					const sameTrack = audioPlayer.getAttribute("src") === src;
+
+					if (sameTrack && !audioPlayer.paused) {
+						audioPlayer.pause();
+						setTileState(tile, false);
+						return;
+					}
+
+					if (!sameTrack) {
+						audioPlayer.src = src;
+					}
+
+					currentTrack.textContent = title;
+
+					try {
+						await audioPlayer.play();
+						setTileState(tile, true);
+					} catch (error) {
+						currentTrack.textContent = "Press play in the audio controls";
+						setTileState(tile, false);
+					}
+				});
+			});
+
+			audioPlayer.addEventListener("pause", () => {
+				const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
+				setTileState(activeTile, false);
+			});
+
+			audioPlayer.addEventListener("play", () => {
+				const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
+				if (activeTile) {
+					currentTrack.textContent = activeTile.dataset.track;
+					setTileState(activeTile, true);
 				}
 			});
-		};
 
-		albumTiles.forEach((tile) => {
-			tile.addEventListener("click", async () => {
-				const src = tile.dataset.src;
-				const title = tile.dataset.track;
-				const sameTrack = audioPlayer.getAttribute("src") === src;
-
-				if (sameTrack && !audioPlayer.paused) {
-					audioPlayer.pause();
-					setTileState(tile, false);
-					return;
-				}
-
-				if (!sameTrack) {
-					audioPlayer.src = src;
-				}
-
-				currentTrack.textContent = title;
-
-				try {
-					await audioPlayer.play();
-					setTileState(tile, true);
-				} catch (error) {
-					currentTrack.textContent = "Press play in the audio controls";
-					setTileState(tile, false);
-				}
+			audioPlayer.addEventListener("ended", () => {
+				const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
+				setTileState(activeTile, false);
 			});
-		});
-
-		audioPlayer.addEventListener("pause", () => {
-			const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
-			setTileState(activeTile, false);
-		});
-
-		audioPlayer.addEventListener("play", () => {
-			const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
-			if (activeTile) {
-				currentTrack.textContent = activeTile.dataset.track;
-				setTileState(activeTile, true);
-			}
-		});
-
-		audioPlayer.addEventListener("ended", () => {
-			const activeTile = [...albumTiles].find((tile) => tile.dataset.src === audioPlayer.getAttribute("src"));
-			setTileState(activeTile, false);
-		});
+		}
 	</script>
 </body>
 </html>
