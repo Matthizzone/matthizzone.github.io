@@ -513,6 +513,49 @@
 			gap: 22px;
 		}
 
+		.storefront-links {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 16px;
+		}
+
+		.storefront-link {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			min-height: 210px;
+			padding: clamp(18px, 3vw, 26px);
+			border: 1px solid rgba(255, 255, 255, 0.78);
+			border-radius: var(--radius-lg);
+			background: rgba(255, 255, 255, 0.76);
+			box-shadow: var(--shadow);
+			backdrop-filter: blur(18px);
+			transition: transform 180ms ease, box-shadow 180ms ease;
+		}
+
+		.storefront-link:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 24px 46px rgba(25, 0, 134, 0.14);
+		}
+
+		.storefront-link img {
+			width: 42px;
+			height: 42px;
+			object-fit: contain;
+		}
+
+		.storefront-link h3 {
+			margin: 22px 0 8px;
+			font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+			line-height: 1;
+			letter-spacing: 0;
+		}
+
+		.storefront-link p {
+			margin: 0;
+			color: rgba(25, 0, 134, 0.64);
+		}
+
 		.games-panel {
 			padding: clamp(16px, 3vw, 24px);
 			border: 1px solid rgba(255, 255, 255, 0.78);
@@ -1645,6 +1688,10 @@
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
 
+			.storefront-links {
+				grid-template-columns: 1fr;
+			}
+
 			.youtube-topline,
 			.music-feature,
 			.release-panel,
@@ -1897,143 +1944,34 @@
 						<p class="eyebrow">Games</p>
 						<h2>Play the Games.</h2>
 					</div>
-					<p>Steam releases and wishlist pages up top, with the broader itch.io library underneath for demos, browser builds, and experiments.</p>
+					<p>Pick your storefront, or open the full games page for the expanded catalog.</p>
 				</div>
 
-				<div class="games-hub">
-					<section class="games-panel" aria-labelledby="steam-games-title">
-						<div class="games-panel-head">
-							<div>
-								<p class="eyebrow">Steam</p>
-								<h3 id="steam-games-title">Store releases</h3>
-								<p>Wishlist, buy, and follow the main PC releases.</p>
-							</div>
-							<a class="mini-link" href="https://store.steampowered.com/search/?developer=matthizzone" target="_blank" rel="noopener">View all on Steam</a>
+				<div class="storefront-links" aria-label="Game storefront links">
+					<a class="storefront-link" href="https://store.steampowered.com/search/?developer=matthizzone" target="_blank" rel="noopener">
+						<img src="https://cdn.simpleicons.org/steam/190086" alt="" />
+						<div>
+							<p class="eyebrow">Steam</p>
+							<h3>Steam games</h3>
+							<p>Wishlist, buy, and follow the PC releases.</p>
 						</div>
-
-						<div class="steam-grid">
-							<a class="game-card steam-card" href="https://store.steampowered.com/app/3899880/Super_Money_Ring/" target="_blank" rel="noopener">
-								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3899880/77d33a5ba43bc22e088ccb8b8ca057bba7765ea5/capsule_231x87.jpg?t=1780680072" alt="Super Money Ring Steam capsule" />
-								<div class="game-card-body">
-									<h4>Super Money Ring</h4>
-									<div class="game-tags"><span class="game-tag store">Steam</span></div>
-								</div>
-							</a>
-							<a class="game-card steam-card" href="https://store.steampowered.com/app/2676450/Birdminton/" target="_blank" rel="noopener">
-								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2676450/capsule_231x87.jpg?t=1781454832" alt="Birdminton Steam capsule" />
-								<div class="game-card-body">
-									<h4>Birdminton</h4>
-									<div class="game-tags"><span class="game-tag store">Steam</span></div>
-								</div>
-							</a>
-							<a class="game-card steam-card" href="https://store.steampowered.com/app/2569060/Delineation/" target="_blank" rel="noopener">
-								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2569060/capsule_231x87.jpg?t=1781454797" alt="Delineation Steam capsule" />
-								<div class="game-card-body">
-									<h4>Delineation</h4>
-									<div class="game-tags"><span class="game-tag store">Steam</span></div>
-								</div>
-							</a>
-							<a class="game-card steam-card" href="https://store.steampowered.com/app/2820680/PogoGogo/" target="_blank" rel="noopener">
-								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2820680/capsule_231x87.jpg?t=1781454871" alt="Pogo-Gogo Steam capsule" />
-								<div class="game-card-body">
-									<h4>Pogo-Gogo</h4>
-									<div class="game-tags"><span class="game-tag store">Steam</span></div>
-								</div>
-							</a>
-							<a class="game-card steam-card" href="https://store.steampowered.com/app/3497240/KONG_FU/" target="_blank" rel="noopener">
-								<img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3497240/62e1916165a2b69a239909efe640018b7c7c8a6e/capsule_231x87.jpg?t=1781454853" alt="KONG FU Steam capsule" />
-								<div class="game-card-body">
-									<h4>KONG FU</h4>
-									<div class="game-tags"><span class="game-tag store">Steam</span></div>
-								</div>
-							</a>
+					</a>
+					<a class="storefront-link" href="https://matthizzone.itch.io/" target="_blank" rel="noopener">
+						<img src="https://cdn.simpleicons.org/itchdotio/FA5C5C" alt="" />
+						<div>
+							<p class="eyebrow">itch.io</p>
+							<h3>itch.io games</h3>
+							<p>Demos, browser builds, prototypes, and smaller releases.</p>
 						</div>
-					</section>
-
-					<section class="games-panel" aria-labelledby="itch-games-title">
-						<div class="games-panel-head">
-							<div>
-								<p class="eyebrow">itch.io</p>
-								<h3 id="itch-games-title">Demos, browser games, and experiments</h3>
-								<p>A wider library of smaller releases and playable prototypes.</p>
-							</div>
-							<a class="mini-link" href="https://matthizzone.itch.io/" target="_blank" rel="noopener">View all on itch.io</a>
+					</a>
+					<a class="storefront-link" href="play/">
+						<img src="Matthizzone_Logo.png" alt="" />
+						<div>
+							<p class="eyebrow">Archive</p>
+							<h3>View games</h3>
+							<p>Browse the visible and archived game cards in one place.</p>
 						</div>
-
-						<div class="itch-grid">
-							<a class="game-card" href="https://matthizzone.itch.io/matthizzones-escape-room" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE1MzU3Mzg2LnBuZw==/315x250%23c/IMUBzV.png" alt="Matthizzone's Escape Room cover art" />
-								<div class="game-card-body"><h4>Matthizzone's Escape Room</h4><div class="game-tags"><span class="game-tag">Puzzle</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/elom-husk" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzI3NjM0MDUxLnBuZw==/315x250%23c/27ss4m.png" alt="Elom Husk Boss Battle cover art" />
-								<div class="game-card-body"><h4>Elom Husk Boss Battle</h4><div class="game-tags"><span class="game-tag">Action</span><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/runners-high" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE4ODQwNTE3LnBuZw==/315x250%23c/jg%2Fcml.png" alt="Runner's High Demo cover art" />
-								<div class="game-card-body"><h4>Runner's High Demo</h4><div class="game-tags"><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/shortcut-racing" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE2NzY2MDY1LnBuZw==/315x250%23c/VnrbVZ.png" alt="Shortcut Racing cover art" />
-								<div class="game-card-body"><h4>Shortcut Racing</h4><div class="game-tags"><span class="game-tag">Racing</span><span class="game-tag">Browser</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/first-person-minesweeper" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzIwMjkwNDU3LnBuZw==/315x250%23c/wslaP4.png" alt="First-Person Minesweeper Horror cover art" />
-								<div class="game-card-body"><h4>First-Person Minesweeper Horror</h4><div class="game-tags"><span class="game-tag">Puzzle</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-						<!--
-							<a class="game-card" href="https://matthizzone.itch.io/no-e-pong" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzIxMjQ5MzA5LnBuZw==/315x250%23c/w5Vndw.png" alt="No E Pong cover art" />
-								<div class="game-card-body"><h4>No E Pong</h4><div class="game-tags"><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/swooper-money-ring" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzIwODA2NDk1LnBuZw==/315x250%23c/HEprIY.png" alt="Swooper Money Ring cover art" />
-								<div class="game-card-body"><h4>Swooper Money Ring</h4><div class="game-tags"><span class="game-tag">Platformer</span><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/kill-waldo" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzIwNDM1NTkzLnBuZw==/315x250%23c/brw6k%2B.png" alt="Kill Waldo cover art" />
-								<div class="game-card-body"><h4>Kill Waldo</h4><div class="game-tags"><span class="game-tag">Windows</span><span class="game-tag">macOS</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/minigolf-pool" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzIwMTQ2ODU3LnBuZw==/315x250%23c/%2F%2FCJAb.png" alt="Minigolf Pool cover art" />
-								<div class="game-card-body"><h4>Minigolf Pool!</h4><div class="game-tags"><span class="game-tag">Simulation</span><span class="game-tag">Browser</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/stella" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE3MDY4Mjg3LnBuZw==/315x250%23c/VLB%2FdH.png" alt="Stella cover art" />
-								<div class="game-card-body"><h4>Stella</h4><div class="game-tags"><span class="game-tag">Browser</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/matthizzones-crummy-chess" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE2MzM3NzE1LnBuZw==/315x250%23c/5FhvtU.png" alt="Matthizzone's Crummy Chess cover art" />
-								<div class="game-card-body"><h4>Matthizzone's Crummy Chess</h4><p class="game-note">Really crappy chess</p><div class="game-tags"><span class="game-tag">Simulation</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/3-cube-games" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE2MTA2NTEyLnBuZw==/315x250%23c/LEuiaP.png" alt="3 Cube Games cover art" />
-								<div class="game-card-body"><h4>3 Cube Games</h4><div class="game-tags"><span class="game-tag">Puzzle</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/chris-redman-is-aboard" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE1MTA0OTU4LnBuZw==/315x250%23c/LcG4PF.png" alt="Chris Redman is Aboard cover art" />
-								<div class="game-card-body"><h4>Chris Redman is Aboard</h4><div class="game-tags"><span class="game-tag">Action</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/pogo-gogo" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE0ODg4MzU4LnBuZw==/315x250%23c/p3CbK0.png" alt="Pogo-Gogo cover art" />
-								<div class="game-card-body"><h4>Pogo-Gogo</h4><div class="game-tags"><span class="game-tag">itch.io</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/chopping-block" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE0NTUyNDgxLnBuZw==/315x250%23c/FmTu%2F4.png" alt="Chopping Block cover art" />
-								<div class="game-card-body"><h4>Chopping Block</h4><p class="game-note">A game about making exact slices</p><div class="game-tags"><span class="game-tag">Simulation</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/birdminton-demo" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzE0MTc4NjA2LnBuZw==/315x250%23c/2sDuw9.png" alt="Birdminton Demo cover art" />
-								<div class="game-card-body"><h4>Birdminton Demo</h4><div class="game-tags"><span class="game-tag">Sports</span></div></div>
-							</a>
-							<a class="game-card" href="https://matthizzone.itch.io/delineation" target="_blank" rel="noopener">
-								<img src="https://img.itch.zone/aW1nLzEzMzAzOTcyLnBuZw==/315x250%23c/dBspkm.png" alt="Delineation cover art" />
-								<div class="game-card-body"><h4>Delineation</h4><div class="game-tags"><span class="game-tag">Puzzle</span><span class="game-tag">Windows</span></div></div>
-							</a>
-							
-						-->
-						</div>
-					</section>
+					</a>
 				</div>
 			</div>
 		</section>
