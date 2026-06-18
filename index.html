@@ -81,6 +81,7 @@
 		.brand {
 			display: inline-flex;
 			align-items: center;
+			flex: 0 0 auto;
 			gap: 10px;
 			font-weight: 800;
 			letter-spacing: 0;
@@ -98,14 +99,17 @@
 			display: flex;
 			align-items: center;
 			gap: 4px;
+			min-width: 0;
 		}
 
 		.nav-links a {
+			flex: 0 0 auto;
 			padding: 9px 13px;
 			border-radius: 999px;
 			color: rgba(25, 0, 134, 0.72);
 			font-size: 0.94rem;
 			font-weight: 700;
+			white-space: nowrap;
 		}
 
 		.nav-links a:hover {
@@ -1584,13 +1588,21 @@
 
 		@media (max-width: 860px) {
 			.site-nav {
-				align-items: flex-start;
-				border-radius: 24px;
+				align-items: center;
+				border-radius: 999px;
 			}
 
 			.nav-links {
-				flex-wrap: wrap;
-				justify-content: flex-end;
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				overflow-x: auto;
+				overscroll-behavior-x: contain;
+				scrollbar-width: none;
+				-webkit-overflow-scrolling: touch;
+			}
+
+			.nav-links::-webkit-scrollbar {
+				display: none;
 			}
 
 			.hero,
@@ -1634,10 +1646,15 @@
 			}
 
 			.youtube-topline,
+			.music-feature,
 			.release-panel,
 			.support-panel,
 			.chart-grid {
 				grid-template-columns: 1fr;
+			}
+
+			.music-feature {
+				align-items: start;
 			}
 
 			.stat-grid {
@@ -1657,7 +1674,7 @@
 
 		@media (max-width: 560px) {
 			body {
-				padding-top: 118px;
+				padding-top: 82px;
 			}
 
 			.page-shell {
@@ -1667,11 +1684,13 @@
 			.site-nav {
 				top: 10px;
 				width: min(100% - 20px, var(--max-width));
-				border-radius: 22px;
+				gap: 10px;
+				padding: 8px 10px;
+				border-radius: 999px;
 			}
 
 			.nav-links a {
-				padding: 8px 10px;
+				padding: 8px 9px;
 				font-size: 0.88rem;
 			}
 
@@ -1697,6 +1716,32 @@
 
 			.music-player {
 				padding: 10px;
+			}
+
+			.music-feature {
+				gap: 20px;
+				padding: 14px;
+			}
+
+			.available-on {
+				margin-top: 18px;
+			}
+
+			.platform-logos {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: 10px;
+			}
+
+			.logo-link {
+				justify-content: flex-start;
+				min-height: 54px;
+				width: 100%;
+				padding: 12px 14px;
+			}
+
+			.album-disc-frame {
+				margin-top: 2px;
 			}
 
 			.album-grid {
