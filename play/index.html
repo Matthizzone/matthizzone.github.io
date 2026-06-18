@@ -208,6 +208,37 @@
 			color: rgba(25, 0, 134, 0.64);
 		}
 
+		.section-head .section-copy {
+			max-width: 430px;
+			margin: 8px 0 0;
+			color: rgba(25, 0, 134, 0.64);
+		}
+
+		.platform-mark {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 148px;
+			width: min(100%, 360px);
+			padding: 28px;
+			border-radius: var(--radius-lg);
+			box-shadow: 0 18px 36px rgba(25, 0, 134, 0.14);
+		}
+
+		.platform-mark.steam {
+			background: #171A21;
+		}
+
+		.platform-mark.itch {
+			background: #FA5C5C;
+		}
+
+		.platform-mark img {
+			width: 100%;
+			height: 92px;
+			object-fit: contain;
+		}
+
 		.games-hub {
 			display: grid;
 			gap: 22px;
@@ -350,6 +381,10 @@
 				flex-direction: column;
 			}
 
+			.platform-mark {
+				width: 100%;
+			}
+
 			.steam-grid {
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 			}
@@ -417,8 +452,11 @@
 					<div>
 						<p class="eyebrow">Steam</p>
 						<h2>Store releases</h2>
+						<p class="section-copy">Wishlist, buy, and follow the main PC releases.</p>
 					</div>
-					<p>Wishlist, buy, and follow the main PC releases.</p>
+					<div class="platform-mark steam" aria-hidden="true">
+						<img src="https://cdn.simpleicons.org/steam/FFFFFF" alt="" />
+					</div>
 				</div>
 
 				<div class="games-panel">
@@ -462,8 +500,11 @@
 					<div>
 						<p class="eyebrow">itch.io</p>
 						<h2>Demos and experiments</h2>
+						<p class="section-copy">A wider library of smaller releases, playable prototypes, and browser builds.</p>
 					</div>
-					<p>A wider library of smaller releases, playable prototypes, and browser builds.</p>
+					<div class="platform-mark itch" aria-hidden="true">
+						<img src="https://cdn.simpleicons.org/itchdotio/FFFFFF" alt="" />
+					</div>
 				</div>
 
 				<div class="games-panel">
